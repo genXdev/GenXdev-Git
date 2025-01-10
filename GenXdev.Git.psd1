@@ -6,7 +6,7 @@
   RootModule           = 'GenXdev.Git.psm1'
 
   # Version number of this module.
-  ModuleVersion        = '1.82.2024'
+  ModuleVersion        = '1.84.2025'
   # Supported PSEditions
   # CompatiblePSEditions = @()
 
@@ -38,7 +38,7 @@
   # ProcessorArchitecture = ''
 
   # Modules that must be imported into the global environment prior to importing this module
-  RequiredModules      = @(@{ModuleName = 'GenXdev.Helpers'; ModuleVersion = '1.82.2024' }, @{ModuleName = 'GenXdev.Webbrowser'; ModuleVersion = '1.82.2024' }, @{ModuleName = 'GenXdev.FileSystem'; ModuleVersion = '1.82.2024' });
+  RequiredModules      = @(@{ModuleName = 'GenXdev.Helpers'; ModuleVersion = '1.84.2025' }, @{ModuleName = 'GenXdev.Webbrowser'; ModuleVersion = '1.84.2025' }, @{ModuleName = 'GenXdev.FileSystem'; ModuleVersion = '1.84.2025' });
 
   # Assemblies that must be loaded prior to importing this module
   RequiredAssemblies   = @()
@@ -77,15 +77,15 @@
   FileList             = @(
 
 
-    ".\\GenXdev.Git.psd1",
-    ".\\GenXdev.Git.psm1",
-    ".\\LICENSE",
-    ".\\license.txt",
-    ".\\powershell.jpg",
-    ".\\README.md"
+  ".\\GenXdev.Git.psd1",
+  ".\\GenXdev.Git.psm1",
+  ".\\LICENSE",
+  ".\\license.txt",
+  ".\\powershell.jpg",
+  ".\\README.md"
 
 
-  )
+)
 
   # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
   PrivateData          = @{
