@@ -56,8 +56,8 @@ Add-FeatureLineToREADME              --> feature
 
 ### SYNTAX
 ````PowerShell
-Add-FeatureLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] 
-[<CommonParameters>]
+Add-FeatureLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] 
+[-UseOneDriveREADME] [<CommonParameters>]
 ````
 
 ### PARAMETERS
@@ -119,7 +119,8 @@ Add-IdeaLineToREADME                 --> idea
 
 ### SYNTAX
 ````PowerShell
-Add-IdeaLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-IdeaLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] 
+[-UseOneDriveREADME] [<CommonParameters>]
 ````
 
 ### DESCRIPTION
@@ -185,7 +186,8 @@ Add-IssueLineToREADME                --> issue
 
 ### SYNTAX
 ````PowerShell
-Add-IssueLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-IssueLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] 
+[-UseOneDriveREADME] [<CommonParameters>]
 ````
 
 ### DESCRIPTION
@@ -251,8 +253,8 @@ Add-LineToREADME
 
 ### SYNTAX
 ````PowerShell
-Add-LineToREADME [[-Line] <String>] [-Section] <String> [-Prefix] <String> [-Code] [-Show] [-Done] 
-[-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-LineToREADME [[-Line] <String>] [-Section] <String> [-Prefix] <String> [-Code] [-Show] 
+[-Done] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ````
 
 ### DESCRIPTION
@@ -345,8 +347,8 @@ Add-TodoLineToREADME                 --> todo
 
 ### SYNTAX
 ````PowerShell
-Add-TodoLineToREADME [[-Line] <String>] [-Code] [-Show] [-Done] [-UseHomeREADME] [-UseOneDriveREADME] 
-[<CommonParameters>]
+Add-TodoLineToREADME [[-Line] <String>] [-Code] [-Show] [-Done] [-UseHomeREADME] 
+[-UseOneDriveREADME] [<CommonParameters>]
 ````
 
 ### DESCRIPTION
