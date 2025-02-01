@@ -6,7 +6,7 @@
   RootModule           = 'GenXdev.Git.psm1'
 
   # Version number of this module.
-  ModuleVersion        = '1.90.2025'
+  ModuleVersion        = '1.94.2025'
   # Supported PSEditions
   # CompatiblePSEditions = @()
 
@@ -26,19 +26,19 @@
   Description          = 'A Windows PowerShell module for git related operations'
 
   # Minimum version of the PowerShell engine required by this module
-  PowerShellVersion    = '7.4.6'
+  PowerShellVersion    = '7.5.0'
 
   # # Intended for PowerShell Core
   CompatiblePSEditions = 'Core'
 
   # # Minimum version of the common language runtime (CLR) required by this module. This prerequisite is valid for the PowerShell Desktop edition only.
-  ClrVersion           = '8.0.10'
+  ClrVersion           = '9.0.1'
 
   # Processor architecture (None, X86, Amd64) required by this module
   # ProcessorArchitecture = ''
 
   # Modules that must be imported into the global environment prior to importing this module
-  RequiredModules      = @(@{ModuleName = 'GenXdev.Helpers'; ModuleVersion = '1.90.2025' }, @{ModuleName = 'GenXdev.Webbrowser'; ModuleVersion = '1.90.2025' }, @{ModuleName = 'GenXdev.FileSystem'; ModuleVersion = '1.90.2025' });
+  RequiredModules      = @(@{ModuleName = 'GenXdev.Data'; ModuleVersion = '1.94.2025' },@{ModuleName = 'GenXdev.Helpers'; ModuleVersion = '1.94.2025' }, @{ModuleName = 'GenXdev.Webbrowser'; ModuleVersion = '1.94.2025' }, @{ModuleName = 'GenXdev.FileSystem'; ModuleVersion = '1.94.2025' });
 
   # Assemblies that must be loaded prior to importing this module
   RequiredAssemblies   = @()
@@ -77,6 +77,17 @@
   FileList             = @(
 
 
+  ".\\Functions\\GenXdev.Git\\Add-FeatureLineToREADME.ps1",
+  ".\\Functions\\GenXdev.Git\\Add-IdeaLineToREADME.ps1",
+  ".\\Functions\\GenXdev.Git\\Add-IssueLineToREADME.ps1",
+  ".\\Functions\\GenXdev.Git\\Add-LineToREADME.ps1",
+  ".\\Functions\\GenXdev.Git\\Add-TodoLineToREADME.ps1",
+  ".\\Functions\\GenXdev.Git\\Features.ps1",
+  ".\\Functions\\GenXdev.Git\\Ideas.ps1",
+  ".\\Functions\\GenXdev.Git\\Issues.ps1",
+  ".\\Functions\\GenXdev.Git\\New-GitCommit.ps1",
+  ".\\Functions\\GenXdev.Git\\PermanentlyDeleteGitFolders.ps1",
+  ".\\Functions\\GenXdev.Git\\Todoos.ps1",
   ".\\GenXdev.Git.psd1",
   ".\\GenXdev.Git.psm1",
   ".\\LICENSE",

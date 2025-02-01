@@ -13,7 +13,7 @@
 ### FEATURES
 
 ### DEPENDENCIES
-[![WinOS - Windows-10 or later](https://img.shields.io/badge/WinOS-Windows--10--10.0.19041--SP0-brightgreen)](https://www.microsoft.com/en-us/windows/get-windows-10) [![GenXdev.Helpers](https://img.shields.io/powershellgallery/v/GenXdev.Helpers.svg?style=flat-square&label=GenXdev.Helpers)](https://www.powershellgallery.com/packages/GenXdev.Helpers/) [![GenXdev.Webbrowser](https://img.shields.io/powershellgallery/v/GenXdev.Webbrowser.svg?style=flat-square&label=GenXdev.Webbrowser)](https://www.powershellgallery.com/packages/GenXdev.Webbrowser/)
+[![WinOS - Windows-10 or later](https://img.shields.io/badge/WinOS-Windows--10--10.0.19041--SP0-brightgreen)](https://www.microsoft.com/en-us/windows/get-windows-10)  [![GenXdev.Data](https://img.shields.io/powershellgallery/v/GenXdev.Data.svg?style=flat-square&label=GenXdev.Data)](https://www.powershellgallery.com/packages/GenXdev.Data/) [![GenXdev.Helpers](https://img.shields.io/powershellgallery/v/GenXdev.Helpers.svg?style=flat-square&label=GenXdev.Helpers)](https://www.powershellgallery.com/packages/GenXdev.Helpers/) [![GenXdev.Webbrowser](https://img.shields.io/powershellgallery/v/GenXdev.Webbrowser.svg?style=flat-square&label=GenXdev.Webbrowser)](https://www.powershellgallery.com/packages/GenXdev.Webbrowser/)
 ### INSTALLATION
 ````PowerShell
 Install-Module "GenXdev.Git"
@@ -29,17 +29,17 @@ Update-Module
 ### GenXdev.Git<hr/>
 | Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | aliases&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
 | --- | --- | --- |
-| [PermanentlyDeleteGitFolders](#PermanentlyDeleteGitFolders) |  |  |
-| [New-GitCommit](#New-GitCommit) | commit |  |
-| [Add-LineToREADME](#Add-LineToREADME) |  |  |
-| [Add-TodoLineToREADME](#Add-TodoLineToREADME) | todo |  |
-| [Todoos](#Todoos) |  |  |
-| [Add-IdeaLineToREADME](#Add-IdeaLineToREADME) | idea |  |
-| [Ideas](#Ideas) |  |  |
-| [Add-IssueLineToREADME](#Add-IssueLineToREADME) | issue |  |
-| [Issues](#Issues) |  |  |
 | [Add-FeatureLineToREADME](#Add-FeatureLineToREADME) | feature |  |
-| [Features](#Features) |  |  |
+| [Add-IdeaLineToREADME](#Add-IdeaLineToREADME) | idea | Adds a timestamped idea to the "## Ideas" section of a README.md file.Can display the modified section and open in Visual Studio Code. |
+| [Add-IssueLineToREADME](#Add-IssueLineToREADME) | issue | Adds a timestamped issue to the "## Issues" section of a README.md file.Can display the modified section and open in Visual Studio Code. |
+| [Add-LineToREADME](#Add-LineToREADME) |  | Finds and modifies a README.md file by adding a new line to a specified section.Can create the section if it doesn't exist. Supports formatting lines as codeblocks and showing the modified section.Will look in current directory first, then walk up directories to find the READMElocation. If not found, will use the README in the PowerShell profile directory. |
+| [Add-TodoLineToREADME](#Add-TodoLineToREADME) | todo | Adds a timestamped todo item to the "## Todoos" section of a README.md file.The todo items can be marked as done and the modified section can be displayed.Each new todo item is automatically timestamped unless marking as done. |
+| [Features](#Features) |  | Shows all features from the "## Features" section of a README.md file. Can useeither the README in the current location, PowerShell profile directory, orOneDrive directory. |
+| [Ideas](#Ideas) |  | Shows all ideas from the "## Ideas" section of a README.md file. Can use eitherthe README in the current location, PowerShell profile directory, or OneDrivedirectory. |
+| [Issues](#Issues) |  | Shows all issues from the "## Issues" section of a README.md file. Can useeither the README in the current location, PowerShell profile directory, orOneDrive directory. |
+| [New-GitCommit](#New-GitCommit) | commit | Adds all changes, creates a commit with the specified title, and pushes to thecurrent branch's remote origin. |
+| [PermanentlyDeleteGitFolders](#PermanentlyDeleteGitFolders) |  | Clones a repository, removes specified folders from all branches and commits,then force pushes the changes back to origin. This permanently removes thefolders from Git history. |
+| [Todoos](#Todoos) |  | Shows all todo items from the "## Todoos" section of a README.md file. Can useeither the README in the current location, PowerShell profile directory, orOneDrive directory. |
 
 <br/><hr/><hr/><br/>
 
@@ -49,171 +49,19 @@ Update-Module
 &nbsp;<hr/>
 ###	GenXdev.Git<hr/>
 
-##	PermanentlyDeleteGitFolders
+##	Add-FeatureLineToREADME
 ````PowerShell
-PermanentlyDeleteGitFolders
+Add-FeatureLineToREADME              --> feature
 ````
 
 ### SYNTAX
 ````PowerShell
-PermanentlyDeleteGitFolders [-RepoUri] <string> [-Folders] <string[]> [<CommonParameters>]
-````
-
-### PARAMETERS
-    -Folders <string[]>
-        Required?                    true
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -RepoUri <string>
-        Required?                    true
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    <CommonParameters>
-        This cmdlet supports the common parameters: Verbose, Debug,
-        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer, PipelineVariable, and OutVariable. For more information, see
-        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
-
-<br/><hr/><hr/><br/>
-
-##	New-GitCommit
-````PowerShell
-New-GitCommit                        --> commit
-````
-
-### SYNTAX
-````PowerShell
-New-GitCommit [[-title] <string>] [<CommonParameters>]
-````
-
-### PARAMETERS
-    -title <string>
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       true (FromRemainingArguments)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    <CommonParameters>
-        This cmdlet supports the common parameters: Verbose, Debug,
-        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer, PipelineVariable, and OutVariable. For more information, see
-        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
-
-<br/><hr/><hr/><br/>
-
-##	Add-LineToREADME
-````PowerShell
-Add-LineToREADME
-````
-
-### SYNTAX
-````PowerShell
-Add-LineToREADME [[-Line] <string>] [-Section] <string> [-Prefix] <string> [-Code] [-Show] [-Done] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-FeatureLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] 
+[<CommonParameters>]
 ````
 
 ### PARAMETERS
     -Code
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Done
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Line <string>
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Prefix <string>
-        Required?                    true
-        Position?                    2
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Section <string>
-        Required?                    true
-        Position?                    1
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Show
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -UseHomeREADME
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -UseOneDriveREADME
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    <CommonParameters>
-        This cmdlet supports the common parameters: Verbose, Debug,
-        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer, PipelineVariable, and OutVariable. For more information, see
-        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
-
-<br/><hr/><hr/><br/>
-
-##	Add-TodoLineToREADME
-````PowerShell
-Add-TodoLineToREADME                 --> todo
-````
-
-### SYNTAX
-````PowerShell
-Add-TodoLineToREADME [[-Line] <string>] [-Code] [-Show] [-Done] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
-````
-
-### PARAMETERS
-    -Code
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Done
         Required?                    false
         Position?                    Named
         Accept pipeline input?       false
@@ -237,41 +85,6 @@ Add-TodoLineToREADME [[-Line] <string>] [-Code] [-Show] [-Done] [-UseHomeREADME]
         Aliases                      None
         Dynamic?                     false
         Accept wildcard characters?  false
-    -UseHomeREADME
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -UseOneDriveREADME
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    <CommonParameters>
-        This cmdlet supports the common parameters: Verbose, Debug,
-        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer, PipelineVariable, and OutVariable. For more information, see
-        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
-
-<br/><hr/><hr/><br/>
-
-##	Todoos
-````PowerShell
-Todoos
-````
-
-### SYNTAX
-````PowerShell
-Todoos [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
-````
-
-### PARAMETERS
     -UseHomeREADME
         Required?                    false
         Position?                    Named
@@ -301,86 +114,58 @@ Todoos [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 Add-IdeaLineToREADME                 --> idea
 ````
 
-### SYNTAX
-````PowerShell
-Add-IdeaLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
-````
-
-### PARAMETERS
-    -Code
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Line <string>
-        Required?                    false
-        Position?                    0
-        Accept pipeline input?       true (FromRemainingArguments)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Show
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -UseHomeREADME
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -UseOneDriveREADME
-        Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    <CommonParameters>
-        This cmdlet supports the common parameters: Verbose, Debug,
-        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
-        OutBuffer, PipelineVariable, and OutVariable. For more information, see
-        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
-
-<br/><hr/><hr/><br/>
-
-##	Ideas
-````PowerShell
-Ideas
-````
+### SYNOPSIS
+    Adds an idea item to the README.md file.
 
 ### SYNTAX
 ````PowerShell
-Ideas [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-IdeaLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ````
 
+### DESCRIPTION
+    Adds a timestamped idea to the "## Ideas" section of a README.md file.
+    Can display the modified section and open in Visual Studio Code.
+
 ### PARAMETERS
-    -UseHomeREADME
+    -Line <String>
+        The idea text to add. Will be prefixed with current date if not empty.
         Required?                    false
-        Position?                    Named
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseOneDriveREADME
+    -Code [<SwitchParameter>]
+        Opens the README in Visual Studio Code after modification.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
+        Accept wildcard characters?  false
+    -Show [<SwitchParameter>]
+        Displays the modified section after changes.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseHomeREADME [<SwitchParameter>]
+        Uses README in PowerShell profile directory instead of current location.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Uses README in OneDrive directory instead of current location.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
@@ -395,51 +180,58 @@ Ideas [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 Add-IssueLineToREADME                --> issue
 ````
 
+### SYNOPSIS
+    Adds an issue item to the README.md file.
+
 ### SYNTAX
 ````PowerShell
-Add-IssueLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-IssueLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ````
 
+### DESCRIPTION
+    Adds a timestamped issue to the "## Issues" section of a README.md file.
+    Can display the modified section and open in Visual Studio Code.
+
 ### PARAMETERS
-    -Code
+    -Line <String>
+        The issue text to add. Will be prefixed with current date if not empty.
         Required?                    false
-        Position?                    Named
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -Line <string>
+    -Code [<SwitchParameter>]
+        Opens the README in Visual Studio Code after modification.
         Required?                    false
-        Position?                    0
-        Accept pipeline input?       true (FromRemainingArguments)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Show
-        Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseHomeREADME
+    -Show [<SwitchParameter>]
+        Displays the modified section after changes.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseOneDriveREADME
+    -UseHomeREADME [<SwitchParameter>]
+        Uses README in PowerShell profile directory instead of current location.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Uses README in OneDrive directory instead of current location.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
@@ -449,32 +241,91 @@ Add-IssueLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-UseO
 
 <br/><hr/><hr/><br/>
 
-##	Issues
+##	Add-LineToREADME
 ````PowerShell
-Issues
+Add-LineToREADME
 ````
+
+### SYNOPSIS
+    Adds a line to a README.md markdown file in a specified section.
 
 ### SYNTAX
 ````PowerShell
-Issues [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-LineToREADME [[-Line] <String>] [-Section] <String> [-Prefix] <String> [-Code] [-Show] [-Done] 
+[-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 ````
 
+### DESCRIPTION
+    Finds and modifies a README.md file by adding a new line to a specified section.
+    Can create the section if it doesn't exist. Supports formatting lines as code
+    blocks and showing the modified section.
+    Will look in current directory first, then walk up directories to find the README
+    location. If not found, will use the README in the PowerShell profile directory.
+
 ### PARAMETERS
-    -UseHomeREADME
+    -Line <String>
+        The line of text to add to the README file.
         Required?                    false
-        Position?                    Named
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseOneDriveREADME
-        Required?                    false
-        Position?                    Named
+    -Section <String>
+        The section header where the line should be added.
+        Required?                    true
+        Position?                    2
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
+        Accept wildcard characters?  false
+    -Prefix <String>
+        The prefix to add before the line (default: "* ").
+        Required?                    true
+        Position?                    3
+        Default value                *
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -Code [<SwitchParameter>]
+        Switch to open the README in Visual Studio Code after modification.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -Show [<SwitchParameter>]
+        Switch to display the modified section after changes.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -Done [<SwitchParameter>]
+        Switch to mark a todo item as completed.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseHomeREADME [<SwitchParameter>]
+        Switch to use README in PowerShell profile directory.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Switch to use README in OneDrive directory.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
@@ -484,56 +335,73 @@ Issues [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
 
 <br/><hr/><hr/><br/>
 
-##	Add-FeatureLineToREADME
+##	Add-TodoLineToREADME
 ````PowerShell
-Add-FeatureLineToREADME              --> feature
+Add-TodoLineToREADME                 --> todo
 ````
+
+### SYNOPSIS
+    Adds a todo item to the README.md file.
 
 ### SYNTAX
 ````PowerShell
-Add-FeatureLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Add-TodoLineToREADME [[-Line] <String>] [-Code] [-Show] [-Done] [-UseHomeREADME] [-UseOneDriveREADME] 
+[<CommonParameters>]
 ````
 
+### DESCRIPTION
+    Adds a timestamped todo item to the "## Todoos" section of a README.md file.
+    The todo items can be marked as done and the modified section can be displayed.
+    Each new todo item is automatically timestamped unless marking as done.
+
 ### PARAMETERS
-    -Code
+    -Line <String>
+        The todo item text to add. Will be prefixed with current date if not empty.
         Required?                    false
-        Position?                    Named
-        Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Position?                    1
+        Default value                
+        Accept pipeline input?       true (ByValue)
+        Aliases                      
         Accept wildcard characters?  false
-    -Line <string>
+    -Code [<SwitchParameter>]
+        Opens the README in Visual Studio Code after modification.
         Required?                    false
-        Position?                    0
-        Accept pipeline input?       true (FromRemainingArguments)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Show
-        Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseHomeREADME
+    -Show [<SwitchParameter>]
+        Displays the modified section after changes.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseOneDriveREADME
+    -Done [<SwitchParameter>]
+        Marks the specified todo item as completed.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseHomeREADME [<SwitchParameter>]
+        Uses README in PowerShell profile directory instead of current location.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Uses README in OneDrive directory instead of current location.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
@@ -548,27 +416,241 @@ Add-FeatureLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] [-Us
 Features
 ````
 
+### SYNOPSIS
+    Displays features from a README.md file.
+
 ### SYNTAX
 ````PowerShell
-Features [-UseHomeREADME] [-UseOneDriveREADME] [<CommonParameters>]
+Features [[-UseHomeREADME]] [[-UseOneDriveREADME]] [<CommonParameters>]
 ````
 
+### DESCRIPTION
+    Shows all features from the "## Features" section of a README.md file. Can use
+    either the README in the current location, PowerShell profile directory, or
+    OneDrive directory.
+
 ### PARAMETERS
-    -UseHomeREADME
+    -UseHomeREADME [<SwitchParameter>]
+        Use README.md from PowerShell profile directory instead of current location.
         Required?                    false
-        Position?                    Named
+        Position?                    1
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseOneDriveREADME
+    -UseOneDriveREADME [<SwitchParameter>]
+        Use README.md from OneDrive directory instead of current location.
         Required?                    false
-        Position?                    Named
+        Position?                    2
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
+        Accept wildcard characters?  false
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
+
+<br/><hr/><hr/><br/>
+
+##	Ideas
+````PowerShell
+Ideas
+````
+
+### SYNOPSIS
+    Displays ideas from a README.md file.
+
+### SYNTAX
+````PowerShell
+Ideas [[-UseHomeREADME]] [[-UseOneDriveREADME]] [<CommonParameters>]
+````
+
+### DESCRIPTION
+    Shows all ideas from the "## Ideas" section of a README.md file. Can use either
+    the README in the current location, PowerShell profile directory, or OneDrive
+    directory.
+
+### PARAMETERS
+    -UseHomeREADME [<SwitchParameter>]
+        Use README.md from PowerShell profile directory instead of current location.
+        Required?                    false
+        Position?                    1
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Use README.md from OneDrive directory instead of current location.
+        Required?                    false
+        Position?                    2
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
+
+<br/><hr/><hr/><br/>
+
+##	Issues
+````PowerShell
+Issues
+````
+
+### SYNOPSIS
+    Displays issues from a README.md file.
+
+### SYNTAX
+````PowerShell
+Issues [[-UseHomeREADME]] [[-UseOneDriveREADME]] [<CommonParameters>]
+````
+
+### DESCRIPTION
+    Shows all issues from the "## Issues" section of a README.md file. Can use
+    either the README in the current location, PowerShell profile directory, or
+    OneDrive directory.
+
+### PARAMETERS
+    -UseHomeREADME [<SwitchParameter>]
+        Use README.md from PowerShell profile directory instead of current location.
+        Required?                    false
+        Position?                    1
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Use README.md from OneDrive directory instead of current location.
+        Required?                    false
+        Position?                    2
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
+
+<br/><hr/><hr/><br/>
+
+##	New-GitCommit
+````PowerShell
+New-GitCommit                        --> commit
+````
+
+### SYNOPSIS
+    Creates and pushes a new git commit with all changes.
+
+### SYNTAX
+````PowerShell
+New-GitCommit [[-Title] <String>] [<CommonParameters>]
+````
+
+### DESCRIPTION
+    Adds all changes, creates a commit with the specified title, and pushes to the
+    current branch's remote origin.
+
+### PARAMETERS
+    -Title <String>
+        The commit message title to use. Defaults to "Improved scripts".
+        Required?                    false
+        Position?                    1
+        Default value                Improved scripts
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
+
+<br/><hr/><hr/><br/>
+
+##	PermanentlyDeleteGitFolders
+````PowerShell
+PermanentlyDeleteGitFolders
+````
+
+### SYNOPSIS
+    Permanently deletes specified folders from all branches in a Git repository.
+
+### SYNTAX
+````PowerShell
+PermanentlyDeleteGitFolders [-RepoUri] <String> [-Folders] <String[]> [<CommonParameters>]
+````
+
+### DESCRIPTION
+    Clones a repository, removes specified folders from all branches and commits,
+    then force pushes the changes back to origin. This permanently removes the
+    folders from Git history.
+
+### PARAMETERS
+    -RepoUri <String>
+        The URI of the Git repository to clean.
+        Required?                    true
+        Position?                    1
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -Folders <String[]>
+        Array of folder paths to permanently remove from the repository history.
+        Required?                    true
+        Position?                    2
+        Default value                
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see
+        about_CommonParameters     (https://go.microsoft.com/fwlink/?LinkID=113216). 
+
+<br/><hr/><hr/><br/>
+
+##	Todoos
+````PowerShell
+Todoos
+````
+
+### SYNOPSIS
+    Displays todo items from a README.md file.
+
+### SYNTAX
+````PowerShell
+Todoos [[-UseHomeREADME]] [[-UseOneDriveREADME]] [<CommonParameters>]
+````
+
+### DESCRIPTION
+    Shows all todo items from the "## Todoos" section of a README.md file. Can use
+    either the README in the current location, PowerShell profile directory, or
+    OneDrive directory.
+
+### PARAMETERS
+    -UseHomeREADME [<SwitchParameter>]
+        Use README.md from PowerShell profile directory instead of current location.
+        Required?                    false
+        Position?                    1
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Use README.md from OneDrive directory instead of current location.
+        Required?                    false
+        Position?                    2
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
