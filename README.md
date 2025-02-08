@@ -29,7 +29,7 @@ Update-Module
 ### GenXdev.Git<hr/>
 | Command&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | aliases&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description |
 | --- | --- | --- |
-| [Add-FeatureLineToREADME](#Add-FeatureLineToREADME) | feature |  |
+| [Add-FeatureLineToREADME](#Add-FeatureLineToREADME) | feature | Adds a feature line to the specified README file, prefixed with the current datein yyyyMMdd format. The line can be formatted as code and optionally displayed. |
 | [Add-IdeaLineToREADME](#Add-IdeaLineToREADME) | idea | Adds a timestamped idea to the "## Ideas" section of a README.md file.Can display the modified section and open in Visual Studio Code. |
 | [Add-IssueLineToREADME](#Add-IssueLineToREADME) | issue | Adds a timestamped issue to the "## Issues" section of a README.md file.Can display the modified section and open in Visual Studio Code. |
 | [Add-LineToREADME](#Add-LineToREADME) |  | Finds and modifies a README.md file by adding a new line to a specified section.Can create the section if it doesn't exist. Supports formatting lines as codeblocks and showing the modified section.Will look in current directory first, then walk up directories to find the READMElocation. If not found, will use the README in the PowerShell profile directory. |
@@ -54,52 +54,59 @@ Update-Module
 Add-FeatureLineToREADME              --> feature
 ````
 
+### SYNOPSIS
+    Adds a feature line to the README file with a timestamp.
+
 ### SYNTAX
 ````PowerShell
-Add-FeatureLineToREADME [[-Line] <string>] [-Code] [-Show] [-UseHomeREADME] 
+Add-FeatureLineToREADME [[-Line] <String>] [-Code] [-Show] [-UseHomeREADME] 
 [-UseOneDriveREADME] [<CommonParameters>]
 ````
 
+### DESCRIPTION
+    Adds a feature line to the specified README file, prefixed with the current date
+    in yyyyMMdd format. The line can be formatted as code and optionally displayed.
+
 ### PARAMETERS
-    -Code
+    -Line <String>
+        The feature description text to add to the README file.
         Required?                    false
-        Position?                    Named
+        Position?                    1
+        Default value                
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -Line <string>
+    -Code [<SwitchParameter>]
+        Switch to format the line as code in the README file.
         Required?                    false
-        Position?                    0
-        Accept pipeline input?       true (FromRemainingArguments)
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
-        Accept wildcard characters?  false
-    -Show
-        Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseHomeREADME
+    -Show [<SwitchParameter>]
+        Switch to display the README file after adding the line.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
         Accept wildcard characters?  false
-    -UseOneDriveREADME
+    -UseHomeREADME [<SwitchParameter>]
+        Switch to use the README file in the home directory.
         Required?                    false
-        Position?                    Named
+        Position?                    named
+        Default value                False
         Accept pipeline input?       false
-        Parameter set name           (All)
-        Aliases                      None
-        Dynamic?                     false
+        Aliases                      
+        Accept wildcard characters?  false
+    -UseOneDriveREADME [<SwitchParameter>]
+        Switch to use the README file in the OneDrive directory.
+        Required?                    false
+        Position?                    named
+        Default value                False
+        Accept pipeline input?       false
+        Aliases                      
         Accept wildcard characters?  false
     <CommonParameters>
         This cmdlet supports the common parameters: Verbose, Debug,
