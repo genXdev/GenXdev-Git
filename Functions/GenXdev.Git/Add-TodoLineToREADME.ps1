@@ -41,7 +41,7 @@ function Add-TodoLineToREADME {
         [Parameter(
             Position = 0,
             Mandatory = $false,
-            ValueFromRemainingArguments = $true,
+            ValueFromRemainingArguments = $false,
             ValueFromPipeline = $true,
             HelpMessage = "The todo item text to add"
         )]

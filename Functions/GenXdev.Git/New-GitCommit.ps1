@@ -26,7 +26,7 @@ function New-GitCommit {
         [parameter(
             Position = 0,
             Mandatory = $false,
-            ValueFromRemainingArguments = $true,
+            ValueFromRemainingArguments = $false,
             HelpMessage = "The commit message title"
         )]
         [string] $Title = "Improved scripts"

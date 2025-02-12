@@ -37,7 +37,7 @@ function Add-IssueLineToREADME {
         [Parameter(
             Position = 0,
             Mandatory = $false,
-            ValueFromRemainingArguments = $true,
+            ValueFromRemainingArguments = $false,
             HelpMessage = "The issue text to add"
         )]
         [AllowEmptyString()]

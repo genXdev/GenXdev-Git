@@ -37,7 +37,7 @@ function Add-FeatureLineToREADME {
         #######################################################################
         [Parameter(
             Position = 0,
-            ValueFromRemainingArguments = $true,
+            ValueFromRemainingArguments = $false,
             Mandatory = $false,
             HelpMessage = "The feature description text to add"
         )]

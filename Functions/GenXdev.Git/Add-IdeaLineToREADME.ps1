@@ -37,7 +37,7 @@ function Add-IdeaLineToREADME {
         [Parameter(
             Position = 0,
             Mandatory = $false,
-            ValueFromRemainingArguments = $true,
+            ValueFromRemainingArguments = $false,
             HelpMessage = "The idea text to add"
         )]
         [AllowEmptyString()]
